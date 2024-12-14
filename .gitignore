@@ -1,0 +1,72 @@
+# Gradle
+.gradle/
+build/
+**/build/
+!gradle-wrapper.jar
+.gradle/
+local.properties
+.gradle/
+
+# IntelliJ / Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+.DS_Store
+out/
+
+# Keystore files
+*.jks
+*.keystore
+
+# Android Log Files
+*.log
+
+# Android Specific Files
+# Uncomment the following if you have NDK usage
+# *.so
+# obj/
+# ndk-build/
+
+# Annotation files
+*.apt_generated/
+*.factorypath
+
+# Mac OS and Linux files
+*.swp
+*.swo
+*~
+Thumbs.db
+
+# Generated files by Android Studio
+captures/
+.externalNativeBuild/
+.navigation/
+
+# Gradle build cache
+.gradle/
+**/gradle-app.setting
+**/gradle-app.depend
+**/gradle-app.cache
+
+# Ignore generated JSON files for IDE indexing
+.idea/caches/build_file_checksums.ser
+.idea/caches/gradle_models.ser
+
+# Local test reports
+**/reports/
+**/test-results/
+**/test-output/
+
+# Android Gradle Plugin output (AGP 7.0+)
+**/intermediates/
+**/outputs/
+
+# Jetpack Compose Compiler (AGP 7.1+)
+**/kotlin-classes/
+**/kotlin-incremental/
+
+# If using Kotlin
+*.kotlin_module
+.idea/kotlin/
+

@@ -1,0 +1,111 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/add_row_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:layout_marginBottom="16dp" />
+
+    <TableLayout
+        android:id="@+id/score_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1,2"
+        android:shrinkColumns="1,2"
+        android:layout_marginBottom="16dp">
+
+        <TableRow>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:text="Название"
+                android:textStyle="bold"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Балл, %"
+                android:textStyle="bold"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Вес"
+                android:textStyle="bold"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="0.7"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:padding="8dp" />
+        </TableRow>
+
+        <!-- Пример одной строки данных (она будет динамически создаваться при нажатии на кнопку "+") -->
+        <TableRow android:id="@+id/example_row">
+
+            <!-- Название -->
+            <EditText
+                android:id="@+id/item_name"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="wrap_content"
+                android:hint="Название"
+                android:singleLine="true"
+                android:padding="8dp" />
+
+            <!-- Балл, % -->
+            <EditText
+                android:id="@+id/item_score"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:hint="0.0"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:padding="8dp" />
+
+            <!-- Вес -->
+            <EditText
+                android:id="@+id/item_weight"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:hint="0.0"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:padding="8dp" />
+
+            <!-- Кнопка удаления строки -->
+            <Button
+                android:id="@+id/delete_row_button"
+                android:layout_width="0dp"
+                android:layout_weight="0.7"
+                android:layout_height="wrap_content"
+                android:text="-" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/below_table_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Текст ниже таблицы"
+        android:padding="8dp" />
+
+</LinearLayout>
