@@ -21,6 +21,7 @@ public class AssistantActivity extends AppCompatActivity {
     private TableLayout scoreTable;
     private TextView text;
     private final List<DisciplineViewModel> disciplineList = new ArrayList<>();
+    private final DisciplineLoader loader = new DisciplineLoader(this, disciplineList, this::updateTableFromList);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,14 @@ public class AssistantActivity extends AppCompatActivity {
             addNewDiscipline(labName, 75.0, 1);
             reCalculateValues();
         });
+
+        Button saveButton = findViewById(R.id.save_button);
+        Button loadButton = findViewById(R.id.load_button);
+
+        saveButton.setOnClickListener(v -> loader.showSaveDialog(getFilesDir()));
+        loadButton.setOnClickListener(v -> {
+            loader.showLoadDialog(getFilesDir());
+        });
     }
 
     private void addNewDiscipline(String name, double score, double weight) {
@@ -46,7 +55,7 @@ public class AssistantActivity extends AppCompatActivity {
         addDisciplineRow(newItem);
     }
 
-    private void addDisciplineRow(DisciplineViewModel item) {
+    private void addDisciplineRow(@NonNull DisciplineViewModel item) {
         final TableRow newRow = new TableRow(this);
         newRow.setLayoutParams(new TableRow.LayoutParams(
                 TableRow.LayoutParams.MATCH_PARENT,
@@ -137,6 +146,8 @@ public class AssistantActivity extends AppCompatActivity {
         for (DisciplineViewModel item : disciplineList) {
             addDisciplineRow(item);
         }
+
+        reCalculateValues();
     }
 
     @NonNull

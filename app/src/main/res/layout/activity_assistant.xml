@@ -108,4 +108,16 @@
         android:text="Текст ниже таблицы"
         android:padding="8dp" />
 
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сохранить" />
+
+    <Button
+        android:id="@+id/load_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Загрузить" />
+
 </LinearLayout>
