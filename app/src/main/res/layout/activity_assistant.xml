@@ -12,7 +12,10 @@
         android:layout_height="wrap_content"
         android:text="+"
         android:layout_marginBottom="16dp" />
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginBottom="16dp">
     <TableLayout
         android:id="@+id/score_table"
         android:layout_width="match_parent"
@@ -100,6 +103,7 @@
                 android:text="-" />
         </TableRow>
     </TableLayout>
+    </ScrollView>
 
     <TextView
         android:id="@+id/below_table_text"
