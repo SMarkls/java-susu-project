@@ -4,14 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@android:color/darker_gray">
 
     <Button
         android:id="@+id/add_row_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"
-        android:layout_marginBottom="16dp" />
+        android:text="Добавить контрольную точку"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@android:color/background_light"
+        />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="400dp"
@@ -31,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:text="Название"
                 android:textStyle="bold"
+                android:textColor="@color/cardview_light_background"
                 android:padding="8dp" />
 
             <TextView
@@ -51,56 +55,12 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="0.7"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="-"
+                android:drawableStart="@drawable/icon_bin"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:padding="8dp" />
-        </TableRow>
-
-        <!-- Пример одной строки данных (она будет динамически создаваться при нажатии на кнопку "+") -->
-        <TableRow android:id="@+id/example_row">
-
-            <!-- Название -->
-            <EditText
-                android:id="@+id/item_name"
-                android:layout_width="0dp"
-                android:layout_weight="5"
-                android:layout_height="wrap_content"
-                android:hint="Название"
-                android:singleLine="true"
-                android:padding="8dp" />
-
-            <!-- Балл, % -->
-            <EditText
-                android:id="@+id/item_score"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="wrap_content"
-                android:hint="0.0"
-                android:inputType="numberDecimal"
-                android:singleLine="true"
-                android:padding="8dp" />
-
-            <!-- Вес -->
-            <EditText
-                android:id="@+id/item_weight"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="wrap_content"
-                android:hint="0.0"
-                android:inputType="numberDecimal"
-                android:singleLine="true"
-                android:padding="8dp" />
-
-            <!-- Кнопка удаления строки -->
-            <Button
-                android:id="@+id/delete_row_button"
-                android:layout_width="0dp"
-                android:layout_weight="0.7"
-                android:layout_height="wrap_content"
-                android:text="-" />
+                android:drawablePadding="8dp" />
         </TableRow>
     </TableLayout>
     </ScrollView>
@@ -116,12 +76,24 @@
         android:id="@+id/save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Сохранить" />
+        android:text="Сохранить дисциплину" />
 
     <Button
         android:id="@+id/load_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Загрузить" />
+        android:text="Загрузить дисциплину" />
+
+    <Button
+        android:id="@+id/btn_open_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Авторизоваться" />
+
+    <Button
+        android:id="@+id/parse_from_univeris"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Загрузить из универиса" />
 
 </LinearLayout>
