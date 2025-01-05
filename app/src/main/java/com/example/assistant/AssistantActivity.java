@@ -26,6 +26,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class AssistantActivity extends AppCompatActivity {
@@ -65,6 +66,10 @@ public class AssistantActivity extends AppCompatActivity {
             new Thread(() -> {
                 try {
                     List<ControlPoint> controlPoints = parser.findAllControlPoints(d.getJournalId());
+                    Collections.sort(controlPoints, (p1, p2) -> {
+                        return Integer.compare(p1.getOrderNumber(), p2.getOrderNumber());
+                    });
+
                     runOnUiThread(() -> {
                         disciplineList.clear();
                         for (ControlPoint controlPoint : controlPoints) {
@@ -230,6 +235,7 @@ public class AssistantActivity extends AppCompatActivity {
 
     private void openParseDialog(Context context, Consumer<Discipline> onSelected) {
         String[] disciplineNames = new String[disciplines.size()];
+
         for (int i = 0; i < disciplines.size(); i++) {
             disciplineNames[i] = disciplines.get(i).getName();
         }

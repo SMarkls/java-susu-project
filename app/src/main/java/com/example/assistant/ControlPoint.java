@@ -19,6 +19,8 @@ public class ControlPoint {
      */
     private String rating;
 
+    private int orderNumber;
+
     // Геттеры и сеттеры
     public String getName() {
         return name;
@@ -43,5 +45,8 @@ public class ControlPoint {
     public void setRating(String rating) {
         this.rating = rating;
     }
+
+    public int getOrderNumber() {return this.orderNumber; }
+    public void setOrderNumber(int value) { this.orderNumber = value; }
 }
 

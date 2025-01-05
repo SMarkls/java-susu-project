@@ -66,7 +66,7 @@ public class Parser {
 
         List<ControlPoint> points = new ArrayList<>();
         String markPattern = "Name\":\"([а-яА-Я\\d\\w\\-(),. №]+)\",\"EventId\":\"[\\w\\d\\-]+\",\"TypeId\":\"[\\w\\d\\-]+\",\"StudentId\":\"[\\d\\w\\-]+\"" +
-                             ",\"Fio\":\"[а-яА-Я\\w\\d ]+\",\"Point\":([\\w\\d\\.]+),\"Rating\":([\\w\\d\\.]+)";
+                             ",\"Fio\":\"[а-яА-Я\\w\\d ]+\",\"Point\":([\\w\\d\\.]+),\"Rating\":([\\w\\d\\.]+),\"IsMoodle\":[\\w]*,\"EventOrderNumber\":([\\d]*)";
         Pattern pattern = Pattern.compile(markPattern);
         Matcher matcher = pattern.matcher(response);
 
@@ -75,6 +75,7 @@ public class Parser {
             point.setName(matcher.group(1));
             point.setMark(matcher.group(2));
             point.setRating(matcher.group(3));
+            point.setOrderNumber(Integer.parseInt(matcher.group(4)));
             points.add(point);
         }
 
